@@ -1,26 +1,20 @@
+{ 
 
-{
-
-int arr[]={input1,input2,input3,input4};
-        int temp[]=new int[10];
-        int num;
-        for(int i=0;i<arr.length;i++)
-        {   num=arr[i];
-            while(num!=0)
-            {
-                int n=num%10;
-                temp[n]++;
-                num/=10;
+int[] arr=new int[10];
+        for(int i=0;i<input2;i++){
+            while(input1[i]!=0){
+                int rem=input1[i]%10;
+                arr[rem]++;
+                input1[i]/=10;
             }
         }
-        int max=-1;
-        int x=0;
-        for(int i=0;i<temp.length;i++)
-        {
-            if(temp[i]>=max)
-            {
-                max=temp[i];
-                x=i;
+        int max=0;
+        int highest_occur_number=0;
+        for(int i=0;i<10;i++){
+            if(arr[i]>=max){
+                max=arr[i];
+                highest_occur_number=i;
             }
         }
-    return x;
+        return highest_occur_number;
+	}
